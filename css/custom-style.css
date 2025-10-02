@@ -1,0 +1,36 @@
+.outlined-text {
+    font-family: "Bungee Outline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #E24937;
+  }
+
+.spinner{
+  height: 3rem;
+  transition: height 0.3s ease; /* Smooth transition for height change */
+}
+.spinner:hover{
+  height: 4rem;
+  animation: spin 3s linear infinite; /* Apply the spin animation */
+}
+
+.qtt-button{
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.qtt-button:hover{
+  background-color: black;
+  color: white;
+  
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Start at 0 degrees */
+  }
+  100% {
+    transform: rotate(360deg); /* Rotate a full 360 degrees */
+  }
+}  
