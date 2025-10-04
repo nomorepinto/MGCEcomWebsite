@@ -121,9 +121,26 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6">
-                        <div class="image-container">
-                            <img class="card-img-top mb-5 mb-md-0 zoom-image" src="assets/Products/keychain2d.png" alt="MGC Keychain 2D" id="item-image" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="image-container">
+                                    <img class="card-img-top mb-5 mb-md-0 zoom-image" src="assets/Products/keychain2d.png" alt="MGC Keychain 2D" id="item-image" />
+                                </div>
+                            </div>
+                            <div class="col-md-3 pt-3 pl-3">
+                                <img class="card-img-top mb-5 mb-md-0" src="assets/Products/keychain2d.png" alt="MGC Keychain 2D" id = "img-2"/>
+                            </div>
+                            <div class="col-md-3 pt-3 pl-3">
+                                <img class="card-img-top mb-5 mb-md-0" src="assets/Products/keychain2d.png" alt="MGC Keychain 2D" id = "img-3"/>
+                            </div>
+                            <div class="col-md-3 pt-3 pl-3">
+                                <img class="card-img-top mb-5 mb-md-0" src="assets/Products/keychain2d.png" alt="MGC Keychain 2D" id = "img-4"/>
+                            </div>
+                            <div class="col-md-3 pt-3 pl-3">
+                                <img class="card-img-top mb-5 mb-md-0" src="assets/Products/keychain2d.png" alt="MGC Keychain 2D" id = "img-5"/>
+                            </div>
                         </div>
+                        
                     </div>
                     
                     <!-- Image Modal -->
@@ -131,11 +148,14 @@
                         <span class="close-modal">&times;</span>
                         <img class="modal-content" id="modalImage">
                     </div>
+
+
                     <div class="col-md-6">
                         <h1 class="display-5 fw-bolder" id="item-title">MGC Keychain 2D</h1>
                         <div class="fs-5 mb-5"><span id="item-price">₱40.00</span></div>
-                        <p class="lead" id="item-description">A sleek and stylish 2D keychain representing MGC pride. Perfect for everyday carry.</p>
-
+                        <p class="lead" id="item-description">A sleek and stylish 2D keychain representing MGC pride. Perfect for everyday carry. <br> 
+                                                        <br>Dimensions: 23mm x 5mm</p>
+                        
                         <button class="btn btn-outline-dark flex-shrink-0 my-5" type="button" id = "add-to-cart-button">
                                 <i class="bi-cart-fill me-1"></i>
                                 Add to Cart
@@ -178,7 +198,6 @@
                         }
                     }
 
-                    updateCartQuantity();
 
                     const url = new URLSearchParams(window.location.search);
                     const itemID = parseInt(url.get('id')); // make sure it's a number
@@ -189,11 +208,20 @@
                         $("#item-price").text(product.price);
                         $("#item-image").attr("src", product.image);
                         $("#item-description").text(product.description);
+                        $("#img-2").attr("src", product.image2);
                     }
-
-                    // Set the button's onclick handler
+                    
+                    //add to cart button functionality
                     $('#add-to-cart-button').attr('onclick', `addToCart(${itemID})`);
+                    
+                    //image change functionality (not finished)
+                    const imageStack = product.imageArray;
+                    let tempImage = imageStack.pop();
+                    imageStack.push(tempImage);
 
+                    
+                    //update cart quantity on page load
+                    updateCartQuantity();
                 });
         </script>
     </body>

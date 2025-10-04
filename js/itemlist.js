@@ -3,6 +3,13 @@ const items = {
                     title: "MGC Keychain 2D",
                     price: "₱40.00",
                     image: "assets/Products/keychain2d.png",
+                    imageArray: {
+                        image1: "assets/Products/keychain2d.png",
+                        image2: "assets/Products/placeholder.jpg",
+                        image3: "assets/Products/placeholder.jpg",
+                        image4: "assets/Products/placeholder.jpg",
+                        image5: "assets/Products/placeholder.jpg"
+                    },
                     description: "A sleek and stylish 2D MGC keychain, perfect for everyday use.",
                     quantity: 1
                 },
