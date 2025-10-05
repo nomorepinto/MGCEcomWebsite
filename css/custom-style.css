@@ -34,3 +34,55 @@
     transform: rotate(360deg); /* Rotate a full 360 degrees */
   }
 }  
+
+body {
+  padding-top: 6vh;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 4vh;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 4vh;
+  }
+}
+
+#item-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.dflex.fixedthumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* space between thumbnails */
+}
+
+.dflex.fixedthumb img {
+  flex: 1 1 calc(25% - 0.8rem); /* 4 per row, minus gap */
+  max-width: calc(25% - 0.8rem);
+  height: auto;
+  object-fit: contain;
+}
+
+.mega-menu {
+  width: 100%;
+  left: 0;
+  right: 0;
+  background-color: #000; /* Black background */
+}
+
+.mega-menu .dropdown-item {
+  padding: 0.25rem 0;
+}
+
+.mega-menu .dropdown-item:hover {
+  background: none;       /* no grey hover */
+  color: #f8d210 !important; /* gold/yellow highlight */
+}
