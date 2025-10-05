@@ -35,8 +35,30 @@
                 </div>
             </div>
         </header>
+
+        
+
         <!-- Section-->
         <section class="py-5">
+
+            <div class="container px-4 px-lg-5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="dropdown">
+                            <button class="btn btn-dark dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-filter"></i> Filter by Category: <span id="current-category">Show All</span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                                <li><a class="dropdown-item category-filter" href="#" data-category="all">Show All</a></li>
+                                <li><a class="dropdown-item category-filter" href="#" data-category="3d-printed">3D Printed Products</a></li>
+                                <li><a class="dropdown-item category-filter" href="#" data-category="stickers">Stickers</a></li>
+                                <li><a class="dropdown-item category-filter" href="#" data-category="lanyards">Lanyards</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <!--MGC Keychain 2D-->
@@ -209,6 +231,38 @@
         <script>
             $(document).ready(function() {
                 console.log("Document is ready");
+                
+                // Define product categories
+                const productCategories = {
+                    'all': [1, 2, 3, 4, 5, 6, 7],
+                    '3d-printed': [1, 2, 3, 4, 5, 6],
+                    'lanyards': [7],
+                    'stickers': []
+                };
+                
+                // Category filter functionality
+                $('.category-filter').click(function(e) {
+                    e.preventDefault();
+                    
+                    const category = $(this).data('category');
+                    const categoryText = $(this).text();
+                    
+                    filterProducts(category, categoryText);
+                });
+                
+                function filterProducts(category, categoryText) {
+                    // Update button text
+                    $('#current-category').text(categoryText);
+                    
+                    // Hide all products first
+                    $('[id^="product-"]').hide();
+                    
+                    // Show products in the selected category
+                    const productsToShow = productCategories[category];
+                    productsToShow.forEach(productId => {
+                        $(`#product-${productId}`).show();
+                    });
+                }
             });
         </script>
     </body>
