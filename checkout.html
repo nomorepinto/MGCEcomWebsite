@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Shop Item - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/custom-style.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                }
+
+                body {
+                flex: 1 0 auto;
+                display: flex;
+                flex-direction: column;
+                padding-top: 10vh; /* Add padding to prevent content from hiding behind navbar */
+                }
+
+                main {
+                flex: 1 0 auto;
+                }
+
+                footer {
+                flex-shrink: 0;
+                }
+        </style>
+        <link href="css/custom-style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+        <!-- Navigation-->
+        <nav id="navbar"></nav>
+        <!-- Product section-->
+        <section class="py-5">
+            <!-- empty cart placeholder div-->
+            <div class="container align-items-center my-5">
+                <h3 class = "text-dark-50 text-center my-2">
+                    Please send your payment of <span id="cart-total">₱0.00</span> to the GCash number below:
+                </h3>
+                <h1 class="display-5 fw-bolder text-dark text-center my-2">
+                    09063416194
+                </h1>
+                <h3 class = "text-dark-50 text-center mt-2">
+                    Then Fill out and submit the checkout form below:
+                </h3>
+            </div>
+            
+        <div class="container">
+        <form id="checkout-form">
+            <div class="row my-3 px-3 align-items-center border rounded" id="checkout-section">
+            
+            <!-- Full Name -->
+            <div class="col-md-12 my-2">
+                <label for="full-name" class="form-label fw-bold">Full Name</label>
+                <input type="text" id="full-name" name="full_name" class="form-control" placeholder="Enter your full name" required>
+            </div>
+
+            <!-- Pickup Location -->
+            <div class="col-md-12 my-2">
+                <label for="pickup-location" class="form-label fw-bold">Pickup Location</label>
+                <input type="text" id="pickup-location" name="pickup_location" class="form-control" placeholder="Where should we deliver/pick up your order?" required>
+            </div>
+
+            <!-- GCash Reference -->
+            <div class="col-md-12 my-2">
+                <label for="gcash-ref" class="form-label fw-bold">GCash Payment Reference Number</label>
+                <input type="text" id="gcash-ref" name="gcash_reference" class="form-control" placeholder="Enter your GCash reference number" required>
+            </div>
+
+            <!-- Facebook Link for chatting -->
+            <div class="col-md-12 my-2">
+                <label for="facebook-link" class="form-label fw-bold">Facebook Link for Order Concern</label>
+                <input type="text" id="facebook-link" name="facebook_link" class="form-control" placeholder="Enter your Facebook link" required>
+            </div>
+
+            <!-- Checkout Button -->
+            <div class="col-md-12 text-center">
+                <button class="btn btn-outline-dark flex-shrink-0 my-3 checkout-button"
+                        type="button"
+                        onclick="checkout()">
+                <i class="bi-credit-card-fill me-1"></i>
+                Submit
+                </button>
+            </div>
+            
+            </div>
+        </form>
+        </div>
+
+            
+
+        </section>
+        </main>
+         <!-- Footer-->
+        <footer class="py-5 bg-black">
+            <div class="container"><p class="m-0 text-center text-white" id = "footer-text">:)</p></div>
+        </footer>
+        <!--Supabase api-->
+        <!--Supabase api-->
+        <!--Supabase api-->
+<script>
+    const { createClient } = supabase;
+    let supabaseClient; // Declare globally
+
+    // Fetch config from serverless function
+    async function initSupabase() {
+        try {
+            const response = await fetch('/api/supabase-config');
+            const config = await response.json();
+            
+            supabaseClient = createClient(config.url, config.anonKey);
+            console.log('Supabase initialized successfully!');
+        } catch (error) {
+            console.error('Failed to initialize Supabase:', error);
+        }
+    }
+
+    // Initialize Supabase when page loads
+    initSupabase();
+
+    async function createOrderInSupabase(cart, customerInfo, orderInfo) {
+        try {
+            // Make sure Supabase is initialized
+            if (!supabaseClient) {
+                throw new Error('Supabase not initialized yet');
+            }
+
+            const formatter = new CartFormatter(cart, customerInfo, orderInfo);
+            const payload = formatter.buildRPCPayload();
+
+            console.log('Sending to Supabase:', payload);
+
+            const { data, error } = await supabaseClient.rpc('create_complete_order', payload);
+
+            if (error) {
+                console.error('Supabase error:', error);
+                throw error;
+            }
+
+            return {
+                success: true,
+                orderID: data
+            };
+        } catch (error) {
+            console.error('Error:', error);
+            return {
+                success: false,
+                error: error.message
+            };
+            }
+        }
+        </script>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/itemlist.js"></script>
+        <script src="js/cartfunctions.js"></script>
+        <script src="js/cart.js"></script>
+        <script src="js/componentUpdater.js"></script>
+        <script src="js/checkoutFunctions.js"></script>
+        <script src ="js/cartObjectFormatter.js"></script>
+    </body>
+</html>

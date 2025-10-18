@@ -170,7 +170,6 @@
             $('#next-image').click(function() {
                 let currentImage = imageQueue.shift();
                 imageQueue.push(currentImage);
-                
                 if (imageQueue[0]) $('#item-image').attr('src', imageQueue[0]);
                 if (imageQueue[1]) $('#img-2').attr('src', imageQueue[1]);
                 if (imageQueue[2]) $('#img-3').attr('src', imageQueue[2]);

@@ -43,7 +43,33 @@ function renderCartItems() {
             $('#cart-items').append($template);
         });
     }
+
+    cart.forEach(item => {
+    console.log(item);
+    });
+    
 }
+
+function downloadCart(cart) {
+  // Convert cart array to JSON string
+  const jsonData = JSON.stringify(cart, null, 2);
+
+  // Create a Blob with JSON data
+  const blob = new Blob([jsonData], { type: "application/json" });
+
+  // Create a temporary link element
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+
+  // Set the filename and trigger download
+  a.href = url;
+  a.download = "cart.json";
+  a.click();
+
+  // Clean up
+  URL.revokeObjectURL(url);
+}
+
 
 function updateCartQuantity() {
     cart = JSON.parse(localStorage.getItem('cart')) || [];

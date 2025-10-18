@@ -8,7 +8,7 @@ function updateFooterText() {
 }
 
 function updateNavBar(){
-    $("#navbar").load("navbar.html", function() {
+    $("#navbar").load("navbar.html", () => {
         updateCartQuantity();
     });
 }
