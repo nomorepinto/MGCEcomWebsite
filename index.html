@@ -60,163 +60,42 @@
             </div>
             
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <!--MGC Keychain 2D-->
-                    <div class="col mb-5" id="product-1">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id = "product-list">
+
+                    <!-- Template -->
+                    <div class="col mb-5 product-template" style="display: none;">
                         <div class="card h-100">
-                            <!-- Product image-->
-                            <a href="item.html?id=1">
-                                <img class="card-img-top" src="assets/Products/mk2d/2.png" alt="MGC Keychain 2D" />
+                            <!-- Product image -->
+                            <a class="product-link" href="#">
+                            <img class="card-img-top product-image" src="" alt="" />
                             </a>
-                            <!-- Product details-->
+
+                            <!-- Product details -->
                             <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">MGC Keychain 2D</h5>
-                                    <!-- Product price-->
-                                    ₱40.00
-                                </div>
+                            <div class="text-center">
+                                <h5 class="fw-bolder product-title"></h5>
+                                <span class="product-price"></span>
                             </div>
-                            <!-- Product actions-->
+                            </div>
+
+                            <!-- Product actions -->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item.html?id=1">View Product Page</a></div>
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto product-view" href="#">View Product Page</a>
+                            </div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button class="btn btn-outline-dark mt-auto" id="add-to-cart-1" onclick="addToCart(1)">Add to Cart</button></div>
+                            <div class="text-center">
+                                <button class="btn btn-outline-dark mt-auto product-add">Add to Cart</button>
+                            </div>
                             </div>
                         </div>
                     </div>
 
-                    <!--MGC Keychain 3D-->
-                    <div class="col mb-5" id="product-2">
-                        <div class="card h-100">
-                            <a href="item.html?id=2">
-                                <img class="card-img-top" src="assets/Products/mk3d/14.png" alt="MGC Keychain 3D" />
-                            </a>
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">MGC Keychain 3D</h5>
-                                    ₱50.00
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item.html?id=2">View Product Page</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button class="btn btn-outline-dark mt-auto" id="add-to-cart-2" onclick="addToCart(2)">Add to Cart</button></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--MGC Keychain Bundle-->
-                    <div class="col mb-5" id="product-3">
-                        <div class="card h-100">
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Deal!</div>
-                            <a href="item.html?id=3">
-                                <img class="card-img-top" src="assets/Products/mkbundle/8.png" alt="MGC Keychain Bundle" />
-                            </a>
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">MGC Keychain Bundle</h5>
-                                    ₱80.00
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item.html?id=3">View Product Page</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button class="btn btn-outline-dark mt-auto" id="add-to-cart-3" onclick="addToCart(3)">Add to Cart</button></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--MGC Keycap Keychain Large-->
-                    <div class="col mb-5" id="product-4">
-                        <div class="card h-100">
-                            <a href="item.html?id=4">
-                                <img class="card-img-top" src="assets/Products/kklarge/20.png" alt="MGC Keycap Keychain Large" />
-                            </a>
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">MGC Keycap Keychain Large</h5>
-                                    ₱90.00
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item.html?id=4">View Product Page</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button class="btn btn-outline-dark mt-auto" id="add-to-cart-4" onclick="addToCart(4)">Add to Cart</button></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--MGC Keycap Keychain Small-->
-                    <div class="col mb-5" id="product-5">
-                        <div class="card h-100">
-                            <a href="item.html?id=5">
-                                <img class="card-img-top" src="assets/Products/kksmall/26.png" alt="MGC Keycap Keychain Small" />
-                            </a>
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">MGC Keycap Keychain Small</h5>
-                                    ₱60.00
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item.html?id=5">View Product Page</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button class="btn btn-outline-dark mt-auto" id="add-to-cart-5" onclick="addToCart(5)">Add to Cart</button></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--MGC Keycap Keychain Bundle-->
-                    <div class="col mb-5" id="product-6">
-                        <div class="card h-100">
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Deal!</div>
-                            <a href="item.html?id=6">
-                                <img class="card-img-top" src="assets/Products/kkbundle/32.png" alt="MGC Keycap Keychain Bundle" />
-                            </a>
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">MGC Keycap Keychain Bundle</h5>
-                                    ₱140.00
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item.html?id=6">View Product Page</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button class="btn btn-outline-dark mt-auto" id="add-to-cart-6" onclick="addToCart(6)">Add to Cart</button></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--MGC ID Lanyard-->
-                    <div class="col mb-5" id="product-7" style = "display:none">
-                        <div class="card h-100">
-                            <a href="item.html?id=7">
-                                <img class="card-img-top" src="assets/Products/placeholder.jpg" alt="MGC ID Lanyard" />
-                            </a>
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <h5 class="fw-bolder">MGC ID Lanyard</h5>
-                                    ₱???
-                                </div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="item.html?id=7">View Product Page</a></div>
-                            </div>
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button class="btn btn-outline-dark mt-auto" id="add-to-cart-7" onclick="addToCart(7)">Add to Cart</button></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
+
+
+
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-black">
@@ -225,45 +104,11 @@
         <!-- Bootstrap core JS-->
         <!-- Core theme JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/itemlist.js"></script>
-        <script src="js/cartfunctions.js"></script>
-        <script src="js/componentUpdater.js"></script>
-        <script>
-            $(document).ready(function() {
-                console.log("Document is ready");
-                
-                // Define product categories
-                const productCategories = {
-                    'all': [1, 2, 3, 4, 5, 6, 7],
-                    '3d-printed': [1, 2, 3, 4, 5, 6],
-                    'lanyards': [7],
-                    'stickers': []
-                };
-                
-                // Category filter functionality
-                $('.category-filter').click(function(e) {
-                    e.preventDefault();
-                    
-                    const category = $(this).data('category');
-                    const categoryText = $(this).text();
-                    
-                    filterProducts(category, categoryText);
-                });
-                
-                function filterProducts(category, categoryText) {
-                    // Update button text
-                    $('#current-category').text(categoryText);
-                    
-                    // Hide all products first
-                    $('[id^="product-"]').hide();
-                    
-                    // Show products in the selected category
-                    const productsToShow = productCategories[category];
-                    productsToShow.forEach(productId => {
-                        $(`#product-${productId}`).show();
-                    });
-                }
-            });
-        </script>
+        <script src ="js/Model/cartModel.js"></script>
+        <script src="js/Model/itemlistModel.js"></script>
+        <script src="js/Controller/cartFunctionsController.js"></script>
+        <script src="js/View/indexItemsView.js"></script>
+        <script src="js/View/componentUpdaterView.js"></script>
+        <script src="js/View/categoryFilterView.js"></script>
     </body>
 </html>

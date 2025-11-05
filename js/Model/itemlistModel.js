@@ -83,6 +83,7 @@ const items = {
         description: "Why choose one when you can have both? Get the MGC Keycap Keychain Bundle to secure both the Large and Small keychains at a special price! This bundle is the ultimate way to elevate your key game and makes for a fantastic gift for any keyboard enthusiast.",
         quantity: 1
     },
+    /*
     7: {
         title: "MGC ID Lanyard",
         price: "₱???",
@@ -96,5 +97,20 @@ const items = {
         },
         description: "Take MGC with you wherever you go. Our official lanyards combine durability with sleek style, making them perfect for holding IDs, keys, or badges with confidence. Whether you’re at school, an event, or just on the move, this lanyard is more than an accessory it’s a badge of pride that shows you’re part of the MGC community. Strong, practical, and designed to stand out. Already rocking the lanyard? Match it with our trading cards and stickers to complete the look.",
         quantity: 1
+    },
+    8: {
+        title: "MGC Stickers",
+        price: "₱20.00",
+        image: "assets/Products/placeholder.jpg",
+        imageArray: {
+            image1: "assets/Products/placeholder.jpg",
+            image2: "assets/Products/placeholder.jpg",
+            image3: "assets/Products/placeholder.jpg",
+            image4: "assets/Products/placeholder.jpg",
+            image5: "assets/Products/placeholder.jpg"
+        },
+        description: "Show off your MGC pride with these vibrant stickers! Perfect for laptops, notebooks, or any surface that needs a touch of gaming spirit. Durable and eye-catching, these stickers are a fun way to personalize your belongings and represent the Mapúa Game Consensus community wherever you go.",
+        quantity: 1
     }
+    */
 };
