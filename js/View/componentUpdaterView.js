@@ -1,12 +1,12 @@
-const facebookLink = "https://www.facebook.com/MGConsensus";
-const email = "mapuagameconsensus@gmail.com";
+const facebookLink = '<a href = "https://www.facebook.com/MGConsensus">https://www.facebook.com/MGConsensus</a>';
+const email = '<a href = "mailto:mapuagameconsensus@gmail.com">mapuagameconsensus@gmail.com</a>';
 
 const combination = facebookLink + "<br>" + email;
-const link = `<a href = "https://www.facebook.com/MGConsensus"> ${combination} </a>`;
 
 function updateFooterText() {
-    $("#footer-text").html(link);
-}
+    $("#footer-text").html(combination);
+    $("#footer-text a").css("color", "white");
+}   
 
 function updateNavBar(){
     $("#navbar").load("navbar.html", () => {
